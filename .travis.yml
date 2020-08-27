@@ -11,3 +11,10 @@ before_script:
 script:
   - ng lint
   - ng build --prod --base-href https://matjanko.github.io/about-me/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/about-me
+  on:
+    branch: master
